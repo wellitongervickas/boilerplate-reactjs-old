@@ -1,8 +1,8 @@
-// @flow
+// @flow strict
 import { call } from 'redux-saga/effects';
 
 type Props = {
-  service: any,
+  service: Function,
   payload?: any
 };
 

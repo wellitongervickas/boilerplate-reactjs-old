@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import Welcome from '../app/views/welcome';
 import { RoutesInterface } from '../utils/interfaces/routes';
 

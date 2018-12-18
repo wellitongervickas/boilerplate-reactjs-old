@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import { ActionInterface } from '../../../utils/interfaces/action';
 
 type State = { root: string };
