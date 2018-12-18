@@ -1,10 +1,12 @@
 import * as React from 'react';
-import Header from '../../components/header';
+import { Header } from '../../components';
 
 export default function Welcome() {
   return (
     <div>
-      <Header />
+      <React.Suspense fallback={<div /* loading */ />}>
+        <Header />
+      </React.Suspense>
     </div>
   );
 }
