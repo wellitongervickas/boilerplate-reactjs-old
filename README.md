@@ -1,5 +1,9 @@
 # React Boilerplate
 
+### Env file example (.env)
+
+- REACT_APP_API_URL="https://localhost:8000"
+
 ### Development builds
 
 - **npm start** _development mode_
