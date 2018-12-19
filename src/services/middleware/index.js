@@ -22,6 +22,11 @@ export default class Middleware {
   }
 
   static request(params: RequestConfig) {
-    return this.service()[params.method](params);
+    return this.service()(params) // get general type
+      .then(result => result)
+      .catch((err) => {
+        console.error(err, 'services middleware error');
+        return err;
+      });
   }
 }
