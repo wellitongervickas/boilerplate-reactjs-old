@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router';
 import { history } from '../store';
 import config from '../config';
 import { RoutesInterface } from '../utils/interfaces/routes';
-import Middleware from '../services/middleware';
 
 type Props = {};
 

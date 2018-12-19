@@ -42,3 +42,4 @@
 - https://eslint.org/
 - https://www.styled-components.com/
 - https://github.com/ReactTraining/react-router
+- https://github.com/axios/axios
