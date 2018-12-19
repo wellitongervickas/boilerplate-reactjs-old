@@ -16,7 +16,6 @@ export default class Middleware {
       };
 
       // Create your service configurations before request
-
       return requestReturn;
     });
 

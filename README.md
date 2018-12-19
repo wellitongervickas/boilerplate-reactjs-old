@@ -8,11 +8,13 @@
 
 - **npm run dev** _development mode_
 - **npm run build** _production build_
+- **npm run lint** _eslint verification_
 
 ### Required global and dev packages
 
 > **npm install -g** eslit eslint-config....
 
+- babel-eslint
 - eslint
 - eslint-config-airbnb
 - eslint-plugin-flowtype
