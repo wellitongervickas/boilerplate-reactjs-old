@@ -1,4 +1,4 @@
-# React Boilerplate
+# React Boilerplate V2
 
 ### Env file example (.env)
 
@@ -6,7 +6,7 @@
 
 ### Development builds
 
-- **npm start** _development mode_
+- **npm run dev** _development mode_
 - **npm run build** _production build_
 
 ### Required global and dev packages
