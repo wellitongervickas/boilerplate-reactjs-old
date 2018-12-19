@@ -11,7 +11,9 @@ export default class Middleware {
     const request = Axios.create();
 
     request.interceptors.request.use((requestConfig) => {
-      const requestReturn = { ...requestConfig };
+      const requestReturn = {
+        ...requestConfig,
+      };
 
       return requestReturn;
     });
