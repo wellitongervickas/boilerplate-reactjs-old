@@ -10,11 +10,12 @@ export default class AppRoutes {
         path: '/',
         exact: true,
         component: Welcome,
+        name: 'home',
       },
     ];
   }
 
-  static getUrl(name: string): string {
-    return name;
+  static getUrl(name: string): Object {
+    return this.getRoutes().map(item => item.name === name);
   }
 }

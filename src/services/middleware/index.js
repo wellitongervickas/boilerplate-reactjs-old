@@ -7,7 +7,7 @@ type RequestConfig = {
 };
 
 export default class Middleware {
-  static service() {
+  static service(): any {
     const request = Axios.create();
 
     request.interceptors.request.use((requestConfig) => {
@@ -21,10 +21,10 @@ export default class Middleware {
     return request;
   }
 
-  static request(params: RequestConfig) {
-    return this.service()(params) // get general type
-      .then(result => result)
-      .catch((err) => {
+  static request(params: RequestConfig): Promise<mixed> {
+    return this.service()(params)
+      .then((result: any) => result)
+      .catch((err: any) => {
         console.error(err, 'services middleware error');
         return err;
       });

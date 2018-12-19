@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router';
 import { history } from '../store';
 import config from '../config';
 import { RoutesInterface } from '../utils/interfaces/routes';
+import { Header, Footer, ContentLoading } from './components';
 
 type Props = {};
 
@@ -22,15 +23,27 @@ class App extends React.Component<Props, State> {
 
     return (
       <ConnectedRouter history={history}>
-        <section>
-          <main>
-            <Switch>
-              {routesList.map(item => (
-                <Route key={item.key} {...item} />
-              ))}
-            </Switch>
-          </main>
-        </section>
+        <div>
+          <section>
+            <React.Suspense fallback={<ContentLoading />}>
+              <Header />
+            </React.Suspense>
+          </section>
+          <section>
+            <main>
+              <Switch>
+                {routesList.map(item => (
+                  <Route key={item.key} {...item} />
+                ))}
+              </Switch>
+            </main>
+          </section>
+          <section>
+            <React.Suspense fallback={<ContentLoading />}>
+              <Footer />
+            </React.Suspense>
+          </section>
+        </div>
       </ConnectedRouter>
     );
   }
