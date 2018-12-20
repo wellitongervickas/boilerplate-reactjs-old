@@ -18,7 +18,7 @@ class App extends React.Component<Props, State> {
     routesList: config.routes.list,
   };
 
-  renderSections() {
+  renderSections(): Array<any> {
     const { routesList } = this.state;
     return [
       <section key="header">
@@ -43,7 +43,7 @@ class App extends React.Component<Props, State> {
     ];
   }
 
-  render() {
+  render(): any {
     return (
       <ConnectedRouter history={history}>
         <div>{this.renderSections()}</div>
