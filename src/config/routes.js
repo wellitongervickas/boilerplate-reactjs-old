@@ -1,5 +1,5 @@
 // @flow strict
-import Welcome from '../app/views/welcome';
+import { Welcome, NotFound } from '../app/views';
 import { RoutesInterface } from '../utils/interfaces/routes';
 
 export default class AppRoutes {
@@ -11,6 +11,10 @@ export default class AppRoutes {
         exact: true,
         component: Welcome,
         name: 'welcome',
+      },
+      {
+        key: 1,
+        component: NotFound,
       },
     ];
   }

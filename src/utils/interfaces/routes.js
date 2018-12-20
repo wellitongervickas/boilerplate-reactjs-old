@@ -1,8 +1,9 @@
 // @flow strict
+
 export interface RoutesInterface {
   key: number;
-  path: string;
+  path?: string;
   exact?: boolean;
   component: any;
-  name: string;
+  name?: string;
 }

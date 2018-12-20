@@ -18,23 +18,27 @@ class App extends React.Component<Props, State> {
     routesList: config.routes.list,
   };
 
-  renderSections(): Array<any> {
+  renderRoutes(): any {
     const { routesList } = this.state;
+    return (
+      <main>
+        <Switch>
+          {routesList.map((item: RoutesInterface) => (
+            <Route key={item.key} {...item} />
+          ))}
+        </Switch>
+      </main>
+    );
+  }
+
+  renderSections(): Array<any> {
     return [
       <section key="header">
         <React.Suspense fallback={<ContentLoading />}>
           <Header />
         </React.Suspense>
       </section>,
-      <section key="main">
-        <main>
-          <Switch>
-            {routesList.map(item => (
-              <Route key={item.key} {...item} />
-            ))}
-          </Switch>
-        </main>
-      </section>,
+      <section key="main">{this.renderRoutes()}</section>,
       <section key="footer">
         <React.Suspense fallback={<ContentLoading />}>
           <Footer />
