@@ -15,35 +15,38 @@ type State = {
 
 class App extends React.Component<Props, State> {
   state = {
-    routesList: config.routes.getRoutes(),
+    routesList: config.routes.list,
   };
 
-  render() {
+  renderSections() {
     const { routesList } = this.state;
+    return [
+      <section key="header">
+        <React.Suspense fallback={<ContentLoading />}>
+          <Header />
+        </React.Suspense>
+      </section>,
+      <section key="main">
+        <main>
+          <Switch>
+            {routesList.map(item => (
+              <Route key={item.key} {...item} />
+            ))}
+          </Switch>
+        </main>
+      </section>,
+      <section key="footer">
+        <React.Suspense fallback={<ContentLoading />}>
+          <Footer />
+        </React.Suspense>
+      </section>,
+    ];
+  }
 
+  render() {
     return (
       <ConnectedRouter history={history}>
-        <div>
-          <section>
-            <React.Suspense fallback={<ContentLoading />}>
-              <Header />
-            </React.Suspense>
-          </section>
-          <section>
-            <main>
-              <Switch>
-                {routesList.map(item => (
-                  <Route key={item.key} {...item} />
-                ))}
-              </Switch>
-            </main>
-          </section>
-          <section>
-            <React.Suspense fallback={<ContentLoading />}>
-              <Footer />
-            </React.Suspense>
-          </section>
-        </div>
+        <div>{this.renderSections()}</div>
       </ConnectedRouter>
     );
   }

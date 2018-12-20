@@ -3,19 +3,19 @@ import Welcome from '../app/views/welcome';
 import { RoutesInterface } from '../utils/interfaces/routes';
 
 export default class AppRoutes {
-  static getRoutes(): Array<RoutesInterface> {
+  static get list(): Array<RoutesInterface> {
     return [
       {
         key: 0,
         path: '/',
         exact: true,
         component: Welcome,
-        name: 'home',
+        name: 'welcome',
       },
     ];
   }
 
   static getUrl(name: string): Object {
-    return this.getRoutes().map(item => item.name === name);
+    return this.list.map(item => item.name === name);
   }
 }
