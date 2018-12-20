@@ -8,7 +8,6 @@ import * as React from 'react';
  * import { Header } from './components';
  */
 
-// Components
 import ContentLoading from './content-loading';
 
 // Async Components
