@@ -20,6 +20,7 @@
   },
   "scripts": {
     "lint": "eslint ./src",
+    "lint-fix": "eslint ./src --fix",
     "start": "REACT_APP_STAGE=development react-scripts start",
     "dev": "npm start",
     "build-js": "npm run lint && react-scripts build",

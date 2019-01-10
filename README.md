@@ -9,6 +9,7 @@
 - **npm run dev** _development mode_
 - **npm run build** _production build_
 - **npm run lint** _eslint verification_
+- **npm run lint-fix"** _eslint fix files_
 
 ### Required global and dev packages
 
@@ -40,6 +41,7 @@
 
 ### References
 
+- https://reactjs.org/docs/faq-structure.html
 - https://flow.org/en/docs/react
 - https://eslint.org/
 - https://www.styled-components.com/
