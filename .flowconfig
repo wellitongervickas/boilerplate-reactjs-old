@@ -3,4 +3,7 @@
 [libs]
 [lints]
 [options]
+module.name_mapper='.+\.s?css' -> 'CSSModule'
+; module.system=haste
+strip_root=true
 [strict]

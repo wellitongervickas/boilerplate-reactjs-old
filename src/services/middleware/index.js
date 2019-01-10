@@ -1,10 +1,6 @@
 // @flow static
 import Axios from 'axios';
-
-type RequestConfig = {
-  url: string,
-  method: string
-};
+import { RequestConfig } from './interface';
 
 export default class Middleware {
   static service(): any {
@@ -25,9 +21,6 @@ export default class Middleware {
   static request(params: RequestConfig): Promise<mixed> {
     return this.service()(params)
       .then((result: any) => result)
-      .catch((err: any) => {
-        console.error(err, 'services middleware error');
-        return err;
-      });
+      .catch((err: any) => err);
   }
 }

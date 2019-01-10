@@ -1,7 +1,6 @@
 // @flow strict
 import { ActionInterface } from '../../../utils/interfaces/action';
-
-type State = { root: any };
+import { State } from './interface';
 
 const DEFAULT_STATE = {
   root: '',
